@@ -1,3 +1,6 @@
+let audio = new Audio('starWars-mainTitle.mp3');
+audio.play();
+
 
 const romanNumeral = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 const URL = "https://swapi.co/api/films/";
@@ -38,3 +41,4 @@ $.ajax({
     }
   }
 });
+
