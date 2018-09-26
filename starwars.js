@@ -25,16 +25,17 @@ function addInfo(title, id){
   })
 }
 
-function sortById(a, b){
-  return a.episode_id < b.episode_id;
-}
 
 $.ajax({
   url: 'https://swapi.co/api/films/',
   dataType: 'json',
   success: function(resposta) {
     console.log(resposta);
-    for (movie of resposta.results.sort(sortById())){
+    for (movie of resposta.results.sort(
+      function (a, b){
+        return a.episode_id > b.episode_id;
+      }
+    )){
       console.log(movie.title);
       console.log(movie.episode_id);
       addInfo(movie.title, movie.episode_id);
