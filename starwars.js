@@ -5,10 +5,10 @@ audio.play();
 const romanNumeral = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 const URL = "https://swapi.co/api/films/";
 function addInfo(title, id){
-  id = romanNumeral[id - 1];
+  idRoman = romanNumeral[id - 1];
   let $li = $('<li></li>');
   $li.data('episode-url', URL + id);
-  $li.html("Episode " + id + ": " + title);
+  $li.html("Episode " + idRoman + ": " + title);
   $li.appendTo("#movies ul");
   $li.click(function(){
     $.ajax({
@@ -16,7 +16,7 @@ function addInfo(title, id){
       dataType: 'json',
       success: function(resposta){
         $(".reading-animation").html(
-          "Episode " + id + "\n" + title.toUpperCase() + "\n\n" +
+          "Episode " + idRoman + "\n" + title.toUpperCase() + "\n\n" +
           resposta.opening_crawl
         );
       }
