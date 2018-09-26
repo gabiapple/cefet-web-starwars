@@ -16,7 +16,7 @@ function addInfo(title, id){
       dataType: 'json',
       success: function(resposta){
         $(".reading-animation").html(
-          "Episode " + idRoman + "\n" + title.toUpperCase() + "\n\n" +
+          "Episode " + romanNumeral[id - 1] + "\n" + title.toUpperCase() + "\n\n" +
           resposta.opening_crawl
         );
       }
