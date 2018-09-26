@@ -1,12 +1,8 @@
-// Seu javascript aqui :)
-// Use a Star Wars API: https://swapi.co/
-// para carregar:
-//  - A lista de filmes
-//  - A introdução de cada filme, quando ele for clicado
 
+const romanNumeral = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII'];
 const URL = "https://swapi.co/api/films/";
 function addInfo(title, id){
-  // html = "<li data-episode-url=" + URL + ">" + "Episode " + id + "</li>";
+  id = romanNumeral[id - 1];
   let $li = $('<li></li>');
   $li.data('episode-url', URL + id);
   $li.html("Episode " + id + ": " + title);
